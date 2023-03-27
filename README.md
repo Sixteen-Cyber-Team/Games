@@ -1,2 +1,6 @@
 # Games
-Game Kertas gunting batu html
+
+Game Kertas,Gunting,batu html Simple Code 
+
+# Script 
+Open Source 
