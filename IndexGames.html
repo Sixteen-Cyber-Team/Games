@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Permainan Kertas, Gunting, Batu</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			margin-top: 50px;
+		}
+		#container {
+			margin-top: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		button {
+			margin: 0 20px;
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.5s;
+		}
+		button:hover {
+			background-color: #0062cc;
+		}
+		#result {
+			margin-top: 50px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Permainan Kertas, Gunting, Batu</h1>
+	<div id="container">
+		<button id="rock">Batu</button>
+		<button id="paper">Kertas</button>
+		<button id="scissors">Gunting</button>
+	</div>
+	<div id="result"></div>
+	<script>
+		// Ambil elemen-elemen yang dibutuhkan
+		const rock = document.getElementById('rock');
+		const paper = document.getElementById('paper');
+		const scissors = document.getElementById('scissors');
+		const result = document.getElementById('result');
+
+		// Tambahkan event listener pada setiap tombol
+		rock.addEventListener('click', function() {
+			play('rock');
+		});
+		paper.addEventListener('click', function() {
+			play('paper');
+		});
+		scissors.addEventListener('click', function() {
+			play('scissors');
+		});
+
+		// Fungsi untuk memainkan permainan
+		function play(playerChoice) {
+			// Acak pilihan komputer
+			const computerChoice = Math.floor(Math.random() * 3);
+
+			// Tentukan hasil permainan
+			if (computerChoice === 0) {
+				// Komputer memilih batu
+				if (playerChoice === 'rock') {
+					result.innerHTML = 'Seri!';
+				} else if (playerChoice === 'paper') {
+					result.innerHTML = 'Anda Menang!';
+				} else {
+					result.innerHTML = 'Komputer Menang!';
+				}
+			} else if (computerChoice === 1) {
+				// Komputer memilih kertas
+				if (playerChoice === 'rock') {
+					result.innerHTML = 'Komputer Menang!';
+				} else if (playerChoice === 'paper') {
+					result.innerHTML = 'Seri!';
+				} else {
+					result.innerHTML = 'Anda Menang!';
+				}
+			} else {
+				// Komputer memilih gunting
+				if (playerChoice === 'rock') {
+					result.innerHTML = 'Anda Menang!';
+				} else if (playerChoice === 'paper') {
+					result.innerHTML = 'Komputer Menang!';
+				} else {
+					result.innerHTML = 'Seri!';
+				}
+			}
+		}
+	</script>
+</body>
+</html
